@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Urban Style - Tienda de moda urbana.">
+  <title>Urban Style | Viste diferente</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- BARRA DE PROMOCIÓN -->
+  <div class="top-bar">
+    ✦ ENVÍO NACIONAL | NUEVA COLECCIÓN URBAN STYLE ✦
+  </div>
+
+  <!-- NAVEGACIÓN -->
+  <header class="header">
+    <a href="#inicio" class="logo">
+      URBAN<span>STYLE</span><small>STREETWEAR CULTURE</small>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#coleccion">Colección</a>
+      <a href="#ofertas">Ofertas</a>
+      <a href="#nosotros">Nosotros</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="cart-button" id="openCart">
+        🛒 <span>Carrito</span>
+        <b id="cartCount">0</b>
+      </button>
+
+      <button class="menu-button" id="menuButton">☰</button>
+    </div>
+  </header>
+
+  <!-- PORTADA -->
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <span class="eyebrow">NUEVA TEMPORADA • 2026</span>
+
+        <h1>VISTE<br>
+          <span>DIFERENTE.</span>
+        </h1>
+
+        <p>
+          La calle es tu pasarela. Descubre prendas urbanas,
+          combina tu esencia y crea tu propio estilo.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#coleccion" class="btn-primary">EXPLORAR COLECCIÓN ↗</a>
+          <a href="#nosotros" class="btn-outline">CONÓCENOS</a>
+        </div>
+
+        <div class="hero-numbers">
+          <div><strong>100%</strong><small>ESTILO URBANO</small></div>
+          <div><strong>12+</strong><small>PRENDAS ÚNICAS</small></div>
+          <div><strong>2026</strong><small>NUEVA COLECCIÓN</small></div>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?w=1000"
+          alt="Modelo con ropa urbana moderna">
+        <div class="hero-sticker">
+          <strong>BE</strong>
+          <span>YOUR<br>OWN<br>STYLE</span>
+        </div>
+        <div class="image-caption">STREETWEAR / COLLECTION 2026</div>
+      </div>
+    </section>
+
+    <!-- CATEGORÍAS -->
+    <section class="categories-section">
+      <div class="section-heading">
+        <span class="eyebrow">ENCUENTRA TU ESTILO</span>
+        <h2>EXPLORA POR <span>CATEGORÍA</span></h2>
+      </div>
+
+      <div class="category-cards">
+        <button class="category-card" data-category="Camisetas">
+          <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600" alt="Camisetas urbanas">
+          <span>CAMISETAS ↗</span>
+        </button>
+
+        <button class="category-card" data-category="Pantalones">
+          <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=600" alt="Pantalones">
+          <span>PANTALONES ↗</span>
+        </button>
+
+        <button class="category-card" data-category="Chaquetas">
+          <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600" alt="Chaquetas">
+          <span>CHAQUETAS ↗</span>
+        </button>
+
+        <button class="category-card" data-category="Sudaderas">
+          <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600" alt="Sudaderas">
+          <span>SUDADERAS ↗</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section class="products-section" id="coleccion">
+      <div class="section-heading">
+        <span class="eyebrow">SELECCIÓN EXCLUSIVA</span>
+        <h2>LA NUEVA <span>COLECCIÓN</span></h2>
+        <p>Prendas que hablan por ti. Encuentra tu próximo outfit favorito.</p>
+      </div>
+
+      <div class="filters">
+        <div class="filter-control">
+          <label for="categoryFilter">Categoría</label>
+          <select id="categoryFilter">
+            <option value="Todas">Todas las categorías</option>
+            <option value="Camisetas">Camisetas</option>
+            <option value="Pantalones">Pantalones</option>
+            <option value="Chaquetas">Chaquetas</option>
+            <option value="Sudaderas">Sudaderas</option>
+          </select>
+        </div>
+
+        <div class="filter-control">
+          <label for="sizeFilter">Talla</label>
+          <select id="sizeFilter">
+            <option value="Todas">Todas las tallas</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+          </select>
+        </div>
+
+        <div class="filter-control">
+          <label for="sortFilter">Ordenar por precio</label>
+          <select id="sortFilter">
+            <option value="default">Destacados</option>
+            <option value="low">Menor precio</option>
+            <option value="high">Mayor precio</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="products-grid" id="productsGrid"></div>
+
+      <p class="empty-message" id="emptyMessage">
+        No encontramos productos con esos filtros.
+      </p>
+    </section>
+
+    <!-- OFERTA -->
+    <section class="promo-section" id="ofertas">
+      <div class="promo-image">
+        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=1000" alt="Moda urbana y streetwear">
+      </div>
+
+      <div class="promo-content">
+        <span class="eyebrow">OFERTA ESPECIAL</span>
+        <h2>MENOS PRECIO.<br>MÁS <span>ACTITUD.</span></h2>
+        <p>
+          Por compras desde $150.000 recibe un descuento
+          especial del 10% en tu pedido.
+        </p>
+        <a href="#coleccion" class="btn-dark">COMPRAR AHORA ↗</a>
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section class="about-section" id="nosotros">
+      <div class="about-content">
+        <span class="eyebrow">NUESTRA IDENTIDAD</span>
+        <h2>NO SEGUIMOS<br>LA MODA. <span>LA CREAMOS.</span></h2>
+        <p>
+          Urban Style nace para quienes quieren expresar su
+          personalidad a través de la ropa. Somos una tienda
+          de moda urbana que combina comodidad, creatividad
+          y tendencias en cada prenda.
+        </p>
+        <div class="about-tag">TU ESTILO. TUS REGLAS. TU HISTORIA.</div>
+      </div>
+
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=900" alt="Estilo de moda urbana">
+      </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="benefits">
+      <div><span>🚚</span><h3>Envíos nacionales</h3><p>Recibe tus prendas donde estés.</p></div>
+      <div><span>👕</span><h3>Estilo auténtico</h3><p>Diseños para expresar tu personalidad.</p></div>
+      <div><span>💳</span><h3>Compra simulada</h3><p>Proceso de pedido sencillo y claro.</p></div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+      <div class="footer-brand">
+        <a href="#inicio" class="logo">URBAN<span>STYLE</span></a>
+        <p>Viste diferente. Sé auténtico.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#coleccion">Colección</a>
+        <a href="#ofertas">Promociones</a>
+        <a href="#nosotros">Nosotros</a>
+      </div>
+
+      <p class="copyright">
+        © 2026 Urban Style. Todos los derechos reservados.
+      </p>
+    </footer>
+  </main>
+
+  <!-- PANEL DEL CARRITO -->
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="drawer-header">
+      <h2>MI CARRITO 🛒</h2>
+      <button id="closeCart" class="close-button">✕</button>
+    </div>
+
+    <div id="cartItems" class="cart-items"></div>
+
+    <div class="cart-summary">
+      <div><span>Subtotal</span><strong id="subtotal">$0</strong></div>
+      <div><span>Descuento (10%)</span><strong id="discount">$0</strong></div>
+      <div class="total-row"><span>TOTAL</span><strong id="total">$0</strong></div>
+      <small>El descuento aplica desde $150.000.</small>
+      <button id="checkoutButton" class="btn-primary full-button">
+        FINALIZAR COMPRA →
+      </button>
+    </div>
+  </aside>
+
+  <!-- FINALIZACIÓN DE COMPRA -->
+  <section class="checkout-section" id="checkoutSection">
+    <div class="checkout-container">
+      <button id="backToShop" class="back-button">← VOLVER A LA TIENDA</button>
+
+      <div class="section-heading">
+        <span class="eyebrow">ÚLTIMO PASO</span>
+        <h2>FINALIZA TU <span>PEDIDO</span></h2>
+      </div>
+
+      <div class="checkout-grid">
+        <form id="checkoutForm" class="checkout-form">
+          <h3>DATOS DE ENVÍO</h3>
+
+          <label for="customerName">Nombre completo</label>
+          <input id="customerName" type="text" required placeholder="Tu nombre">
+
+          <label for="customerEmail">Correo electrónico</label>
+          <input id="customerEmail" type="email" required placeholder="correo@ejemplo.com">
+
+          <label for="customerPhone">Teléfono</label>
+          <input id="customerPhone" type="tel" required pattern="[0-9+\s-]{7,16}" placeholder="Tu número de contacto">
+
+          <label for="customerAddress">Dirección de envío</label>
+          <input id="customerAddress" type="text" required placeholder="Dirección completa">
+
+          <label for="customerCity">Ciudad</label>
+          <input id="customerCity" type="text" required placeholder="Tu ciudad">
+
+          <label for="customerNotes">Observaciones (opcional)</label>
+          <textarea id="customerNotes" placeholder="Indicaciones adicionales..."></textarea>
+
+          <button type="submit" class="btn-primary full-button">
+            CONFIRMAR PEDIDO
+          </button>
+
+          <p class="payment-note">
+            Esta es una demostración académica. No se realizan cobros reales.
+          </p>
+        </form>
+
+        <div class="order-card">
+          <h3>RESUMEN DEL PEDIDO</h3>
+          <div id="checkoutItems"></div>
+          <div class="checkout-total">
+            <span>Subtotal</span><strong id="checkoutSubtotal">$0</strong>
+            <span>Descuento</span><strong id="checkoutDiscount">$0</strong>
+            <span>TOTAL</span><strong id="checkoutTotal">$0</strong>
+          </div>
+        </div>
+      </div>
+
+      <div id="successMessage" class="success-message" hidden>
+        <span>✓</span>
+        <h2>¡PEDIDO CONFIRMADO!</h2>
+        <p>Tu compra simulada se ha registrado correctamente.</p>
+        <button id="continueShopping" class="btn-primary">SEGUIR COMPRANDO</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
